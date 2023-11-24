@@ -1,0 +1,36 @@
+{
+	"name": "ADJSCC",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "tensorflow/tensorflow:2.4.3-gpu",
+	"runArgs": [
+		"--gpus=0"
+	],
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.autopep8",
+					"editor.formatOnType": true
+				},
+				"autopep8.showNotifications": "always",
+				"pylint.showNotifications": "off"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.pylint",
+				"ms-python.autopep8",
+				"yzhang.markdown-all-in-one",
+				"shd101wyy.markdown-preview-enhanced",
+				"davidanson.vscode-markdownlint",
+				"joshbolduc.commitlint",
+				"ms-toolsai.jupyter",
+				"natqe.reload",
+				"shardulm94.trailing-spaces",
+				"codezombiech.gitignore"
+			]
+		}
+	},
+	"shutdownAction": "none"
+}
