@@ -1,0 +1,3 @@
+# tensorflow 2.4.3 compatibility
+tensorflow_compression==2.0
+tensorflow_probability==0.12.2
