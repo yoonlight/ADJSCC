@@ -33,3 +33,9 @@ cd cmake-3.28.0-rc5
 cd ..
 rm -r cmake-3.28.0-rc5
 ```
+
+- pythpn package install
+
+```sh
+pip install -r requirements.txt --use-feature=2020-resolver
+```
