@@ -13,7 +13,7 @@ import json
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 
 
-def train(args, model):
+def train(args, model: tf.keras.models.Model):
     epoch_list = []
     loss_list = []
     val_loss_list = []
@@ -39,7 +39,7 @@ def train(args, model):
         h = model.fit(train_ds, epochs=1, steps_per_epoch=(
             train_nums // args.batch_size if train_nums % args.batch_size == 0 else train_nums // args.batch_size + 1),
                       validation_data=test_ds, validation_steps=(
-                test_nums // args.batch_size if test_nums % args.batch_size == 0 else test_nums // args.batch_size + 1))
+                test_nums // args.batch_size if test_nums % args.batch_size == 0 else test_nums // args.batch_size + 1), verbose=2)
         his = h.history
         loss = his.get('loss')[0]
         val_loss = his.get('val_loss')[0]

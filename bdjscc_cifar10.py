@@ -34,7 +34,7 @@ def train(args, model):
         train_ds = train_ds.prefetch(buffer_size=AUTOTUNE)
         train_step = (train_nums//args.batch_size if train_nums%args.batch_size==0 else train_nums//args.batch_size+1)
         valid_step = (test_nums//args.batch_size if test_nums%args.batch_size==0 else test_nums//args.batch_size+1)
-        h = model.fit(train_ds, epochs=1, steps_per_epoch=train_step, validation_data=test_ds, validation_steps=valid_step)
+        h = model.fit(train_ds, epochs=1, steps_per_epoch=train_step, validation_data=test_ds, validation_steps=valid_step, verbose=2)
         his = h.history
         loss = his.get('loss')[0]
         val_loss = his.get('val_loss')[0]
@@ -70,7 +70,7 @@ def train_mix(args, model):
         train_ds = train_ds.prefetch(buffer_size=AUTOTUNE)
         train_step = (train_nums//args.batch_size if train_nums%args.batch_size==0 else train_nums//args.batch_size+1)
         valid_step = (test_nums//args.batch_size if test_nums%args.batch_size==0 else test_nums//args.batch_size+1)
-        h = model.fit(train_ds, epochs=1, steps_per_epoch=train_step, validation_data=test_ds, validation_steps=valid_step)
+        h = model.fit(train_ds, epochs=1, steps_per_epoch=train_step, validation_data=test_ds, validation_steps=valid_step, verbose=2)
         his = h.history
         loss = his.get('loss')[0]
         val_loss = his.get('val_loss')[0]
