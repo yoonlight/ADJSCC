@@ -163,3 +163,5 @@ model/*
 !model/.gitkeep
 loss/*
 !loss/.gitkeep
+logs/*
+!logs/.gitkeep
